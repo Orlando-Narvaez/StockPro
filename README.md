@@ -1,8 +1,8 @@
-# InvenTrack 📦
+# StockPro 📦
 Sistema de Gestión de Inventario construido con FastAPI y MongoDB.
 
 ## 🚀 Descripción
-**InvenTrack** es una API RESTful que permite administrar productos, movimientos de inventario (entradas y salidas) y usuarios. Diseñada para pequeñas y medianas empresas que desean llevar control digital de su stock.
+**StockPro** es una API RESTful que permite administrar productos, movimientos de inventario (entradas y salidas) y usuarios. Diseñada para pequeñas y medianas empresas que desean llevar control digital de su stock.
 
 ---
 
@@ -23,8 +23,8 @@ Sistema de Gestión de Inventario construido con FastAPI y MongoDB.
 1. **Clona el repositorio**
 
 ```bash
-git clone https://github.com/tu-usuario/inventrack.git
-cd inventrack/backend
+git clone https://github.com/Orlando-Narvaez/StockPro.git
+cd StockPro/backend
 ```
 
 2. **Crea un entorno virtual**
@@ -50,3 +50,27 @@ uvicorn app.main:app --reload
 6. **Visita la documentación interactiva en:**
 
 http://localhost:8000/docs
+
+## ✅ Funcionalidades actuales
+
+ - CRUD de productos
+ - Registro e inicio de sesión de usuarios
+ - Gestión de entradas/salidas de stock
+ - Autenticación con JWT
+ - Dashboard (próximamente)
+ - Frontend con React (próximamente)
+
+ ## 📦 Despliegue
+
+ En el futuro se podrá desplegar en:
+ - Backend: Railway o Render
+ - Base de datos: MongoDB Atlas
+ - Frontend: Vercel
+
+ ## 📄 Licencia
+
+Este proyecto está licenciado bajo la MIT License.
+
+## 🙌 Autor
+
+Desarrollado por: Orlando Narvaez Baracaldo
