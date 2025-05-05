@@ -9,7 +9,12 @@ coleccion_citas = base_de_datos["citas"]
 
 @router.post("/citas", response_model=Cita)
 async def crear_cita(cita: Cita):
-    resultado = await coleccion_citas.insert_one(cita.dict())
+    # Convertir campos fecha y hora a string
+    cita_dict = cita.dict()
+    cita_dict["fecha"] = cita.fecha.isoformat()  # 'YYYY-MM-DD'
+    cita_dict["hora"] = cita.hora.strftime("%H:%M")  # 'HH:MM'
+
+    resultado = await coleccion_citas.insert_one(cita_dict)
     if resultado.inserted_id:
         return cita
     raise HTTPException(status_code=500, detail="No se pudo crear la cita")
@@ -18,6 +23,6 @@ async def crear_cita(cita: Cita):
 async def obtener_citas():
     citas = []
     async for cita in coleccion_citas.find():
-        cita["_id"] = str(cita["_id"])  # Por si usas _id en algún momento
+        cita["_id"] = str(cita["_id"])  # por si lo necesitas en el futuro
         citas.append(Cita(**cita))
     return citas
